@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a New Item</title>
+  </head>
+  <body>
+    <%- include('.../partials/_navbar.ejs') %>
+    <h1>Add a New Item</h1>
+    <form action="/users/<%= user._id %>/foods" method="POST">
+        <label for="brand">Brand:</label>
+        <input type="text" name="Brand" id="Brand" />
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+
+        <label for="quantity">Quantity:</label>
+        <input type="text" name="quantity" id="quantity" />
+
+        <label for="isRipe">Ripeness:</label>
+        <select id="isRipe" name="isRipe">
+            <option value="ripe">Ripe</option>
+            <option value="unripe">Unripe</option>
+            <option value="notApplicable">Not Applicable</option>
+        </select>
+
+        <label for="isExpired">Status:</label>
+        <select id="isExpired" name="isExpired">
+            <option value="expired">Expired</option>
+            <option value="unexpired">Unexpired</option>
+        </select>
+
+        <button type="submit">Add Item</button>
+      </form>
+  </body>
+</html>
